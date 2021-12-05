@@ -8,9 +8,14 @@
     <strong id="success">{{Session::get('success')}}</strong>
 </div>
 @endif
+@if(Session::has('errors'))
 
-@include('admin.loaiSanpham.edit')
-@include('admin.loaiSanpham.create')
+<div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong id="success">{{Session::get('errors')}}</strong>
+</div>
+@endif
+
 
 </div>
 <table class="table table-hover">
@@ -18,25 +23,32 @@
         <tr>
             <th>Mã loại</th>
             <th>Tên loại</th>
+            <th>Quyền</th>
+            <th> </th>
+
         </tr>
     </thead>
     <tbody>
         @foreach($data as $d)
         <tr>
-            <td style="vertical-align: middle;">{{$d->MALOAI}}</td>
-            <td style="vertical-align: middle;">{{$d->TENLOAI}}</td>
-            
+            <td style="vertical-align: middle;"">{{$d->TENDN}}</td>
+            <td style="vertical-align: middle;">{{$d->password}}</td>
+            <td style="vertical-align: middle;">{{$d->QUYEN}}</td>
+           
+            @if(session()->get('quyen')=='admin')
             <td style="vertical-align: middle;"class="text-right">
-            <button type="button" data-url="{{route('loaisanpham.edit',$d->MALOAI)}}" class="btn btn-sm btn-success btnEdit"  data-toggle="modal" data-target="#MyModal">
+            <button type="button" data-url="{{route('taikhoan.edit', $d->TENDN)}}" class="btn btn-sm btn-success btnEdit"  data-toggle="modal" data-target="#MyModal">
                     <i class="fas fa-edit"></i>
             </button>
                
             </td>
+            
             <td class="text-right" style="vertical-align: middle;">
-                <a href="{{route('loaisanpham.destroy',$d->MALOAI)}}" class="btn btn-sm btn-danger btnDel" id="">
+                <a href="{{route('taikhoan.destroy', $d->TENDN)}}" class="btn btn-sm btn-danger btnDel" id="">
                     <i class="fas fa-trash"></i>
                 </a>
             </td>
+            @endif
         </tr>
 
         @endforeach
@@ -50,7 +62,7 @@
 </form>
 @stop
 @section('name')
-<p>Loại sản phẩm</p>
+<p>Sản phẩm</p>
 @stop
 @section('search')
 <form class="form-inline" action="">
@@ -115,14 +127,22 @@
             dataType: "json",
             success: function(response){
                 
-                 if(response.status==200){
-                     console.log(response);
-                     $('#maspEdit').val(response.SP[0].MALOAI);                     
-                     
+                for(var i=0; i<response.count;i++){
                     
-                     $('#dongiaEdit').val(response.SP[0].TENLOAI);
+                    // $('#maloai').append('<option value="1">One</option>');
+                    var option = new Option(response.loai[i].TENLOAI, response.loai[i].MALOAI);
+                $('#maloaiEdit').append($(option));
+                }
+                 if(response.status==200){
+                     $('#maspEdit').val(response.SP[0].MASP);
                      
-                     $('#form-edit').attr('data-url','{{ asset("admin/loaisanpham/") }}/'+response.SP[0].MALOAI)
+                     $('#tenspEdit').val(response.SP[0].TENSP);
+                     $('#dvtinhEdit').val(response.SP[0].DVTINH);
+                     $('#dongiaEdit').val(response.SP[0].DONGIA);
+                     $('#maloaiEdit').val(response.SP[0].MALOAI);
+                     $('#motaEdit').val(response.SP[0].MOTA);
+                     $('#anhEdit').val(response.SP[0].ANH);
+                     $('#form-edit').attr('data-url','{{ asset("admin/sanpham/") }}/'+response.SP[0].MASP)
                      
                  }
             }
@@ -136,11 +156,14 @@ $('#form-edit').submit(function(e){
 					$.ajax({
 						type: 'put',
 						url: url,
-						data: {                            
-							MALOAI: $('#maspEdit').val(),                           
+						data: {
                             
-                            TENLOAI: $('#dongiaEdit').val(),
-                            
+							MASP: $('#maspEdit').val(),
+                            TENSP:  $('#tenspEdit').val(),
+                            DVTINH: $('#dvtinhEdit').val(),
+                            DONGIA: $('#dongiaEdit').val(),
+                            MALOAI: $('#maloaiEdit').val(),
+                            MOTA: $('#motaEdit').val(),
                             
 						},
 						success: function(response) {
