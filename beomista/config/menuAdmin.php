@@ -11,6 +11,11 @@
             'icon' => 'fa fa-shopping-bag'
         ],
         [
+            'label'=> 'Loại sản phẩm',
+            'route'=> 'loaisanpham.index',
+            'icon'=> 'fa fa-shopping-basket'
+        ],
+        [
             'label' => 'Hóa đơn',
             'route' => 'hoadon.index',
             'icon' => 'fa fa-newspaper'
