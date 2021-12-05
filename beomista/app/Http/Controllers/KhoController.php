@@ -7,6 +7,7 @@ use App\Models\nhacungcap;
 use App\Models\sanpham;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KhoController extends Controller
 {
@@ -125,8 +126,9 @@ class KhoController extends Controller
      * @param  \App\Models\kho  $kho
      * @return \Illuminate\Http\Response
      */
-    public function destroy(kho $kho)
+    public function destroy( $kho)
     {
-        //
+        DB::table('kho')->where('MASP',$kho)->delete();
+        return redirect()->route('kho.index')->with('success','Đã xóa thành công  ');
     }
 }

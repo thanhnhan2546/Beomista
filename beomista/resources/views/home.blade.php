@@ -11,7 +11,7 @@
                     <div class="slider_content content_one">
                         <img src="{{url('public/img')}}/slider/content3.png" alt="" >
                         <p>the wooboom clothing summer collection is back at half price</p>
-                        <a href="shop.html">Discover Now</a>
+                        <a href="">Discover Now</a>
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                     <div class="slider_content content_two">
                         <img src="{{url('public/img')}}/slider/content4.png" alt="">
                         <p>the wooboom clothing summer collection is back at half price</p>
-                        <a href="shop.html">Discover Now</a>
+                        <a href="">Discover Now</a>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                     <div class="slider_content content_three">
                         <img src="{{url('public/img')}}/slider/content5.png" alt="">
                         <p>the wooboom clothing summer collection is back at half price</p>
-                        <a href="shop.html">Discover Now</a>
+                        <a href="">Discover Now</a>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                     <div class="col-lg-3">
                         <div class="single_product">
                             <div class="product_thumb">
-                                <a class="primary_img" href="product-details.html"><img src="{{url('public/img/imgSanpham')}}/{{$s->ANH}}" alt=""></a>
+                                <a class="primary_img" href="{{route('home.des', $s->MASP)}}"><img src="{{url('public/img/imgSanpham')}}/{{$s->ANH}}" alt=""></a>
                                 
 
                                 <div class="quick_button">
@@ -76,7 +76,7 @@
                                 </div>
                             </div>
                             <div class="product_content">
-                                <h3><a href="product-details.html">{{$s->TENSP}}</a></h3>
+                                <h3><a href="{{route('home.des', $s->MASP)}}">{{$s->TENSP}}</a></h3>
                                 <span class="current_price">{{ number_format($s->DONGIA, ) }}</span>
                                 <span class="old_price" style="text-decoration: none;">VNĐ</span>
                             </div>
@@ -107,7 +107,7 @@
                     <div class="col-lg-3">
                         <div class="single_product">
                             <div class="product_thumb">
-                                <a class="primary_img" href="product-details.html"><img src="{{url('public/img/imgSanpham')}}/{{$s->ANH}}" alt=""></a>
+                                <a class="primary_img" href="{{route('home.des', $s->MASP)}}"><img src="{{url('public/img/imgSanpham')}}/{{$s->ANH}}" alt=""></a>
                                 
 
                                 <div class="quick_button">
@@ -119,7 +119,7 @@
                                 </div>
                             </div>
                             <div class="product_content">
-                                <h3><a href="product-details.html">{{$s->TENSP}}</a></h3>
+                                <h3><a href="{{route('home.des', $s->MASP)}}">{{$s->TENSP}}</a></h3>
                                 <span class="current_price">{{ number_format($s->DONGIA, ) }}</span>
                                 <span class="old_price" style="text-decoration: none;">VNĐ</span>
                             </div>
@@ -156,7 +156,7 @@
                     <div class="col-lg-3">
                         <div class="single_product">
                             <div class="product_thumb">
-                                <a class="primary_img" href="product-details.html"><img src="{{url('public/img/imgSanpham')}}/{{$s->ANH}}" alt=""></a>
+                                <a class="primary_img" href="{{route('home.des', $s->MASP)}}"><img src="{{url('public/img/imgSanpham')}}/{{$s->ANH}}" alt=""></a>
                                 
 
                                 <div class="quick_button">
@@ -166,7 +166,7 @@
                                 
                             </div>
                             <div class="product_content">
-                                <h3><a href="product-details.html">{{$s->TENSP}}</a></h3>
+                                <h3><a href="{{route('home.des', $s->MASP)}}">{{$s->TENSP}}</a></h3>
                                 <span class="current_price">{{ number_format($s->DONGIA, ) }}</span>
                                 <span class="old_price" style="text-decoration: none;">VNĐ</span>
                             </div>
@@ -191,10 +191,10 @@
             <div class="col-lg-6 col-md-6">
                 <div class="banner_area">
                     <div class="banner_thumb">
-                        <a href="shop.html"><img src="{{url('public/img')}}/bg/banner11.jpg" alt="#"></a>
+                        <a href=""><img src="{{url('public/img')}}/bg/banner11.jpg" alt="#"></a>
                         <div class="banner_content">
                             <h1>Handbag <br> Men’s Collection</h1>
-                            <a href="shop.html">Discover Now</a>
+                            <a href="">Discover Now</a>
                         </div>
                     </div>
                 </div>
@@ -202,10 +202,10 @@
             <div class="col-lg-6 col-md-6">
                 <div class="banner_area">
                     <div class="banner_thumb">
-                        <a href="shop.html"><img src="{{url('public/img')}}/bg/banner12.jpg" alt="#"></a>
+                        <a href=""><img src="{{url('public/img')}}/bg/banner12.jpg" alt="#"></a>
                         <div class="banner_content">
                             <h1>Sneaker <br> Men’s Collection</h1>
-                            <a href="shop.html">Discover Now</a>
+                            <a href="">Discover Now</a>
                         </div>
                     </div>
                 </div>
