@@ -9,6 +9,7 @@ use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+
 class AccountCus extends Controller
 {
     public function login()
@@ -23,55 +24,59 @@ class AccountCus extends Controller
             'password' => 'required'
         ]);
         if ($validator->fails()) {
-            return redirect()->route('home.login')->with('errorLogin','Email nhập sai hoặc bạn đã không nhập một trường nào đó');
+            return redirect()->route('home.login')->with('errorLogin', 'Email nhập sai hoặc bạn đã không nhập một trường nào đó');
         }
         $email = $request->email;
         $pass = md5($request->password);
-        $kh = DB::table('khachhang')->where('EMAIL',$email)->first();
-        if($kh){
-            if(DB::table('khachhang')->where('EMAIL',$email)->where('password',$pass)->first()){
-               session()->put('fname', $kh->HOKH);
-               session()->put('name', $kh->TENKH);
-               session()->put('email', $kh->EMAIL);
-               session()->put('phone', $kh->SDT);
-               session()->put('addr', $kh->DIACHI);
-               session()->put('id', $kh->MAKH);
-               session()->put('sex', $kh->GIOITINH);
-               return redirect()->route('home.index');
-            }else{
-                return redirect()->route('home.login')->with('errorLogin','Mật khẩu không đúng');
+        $kh = DB::table('khachhang')->where('EMAIL', $email)->first();
+        if ($kh) {
+            if (DB::table('khachhang')->where('EMAIL', $email)->where('password', $pass)->first()) {
+                session()->put('fname', $kh->HOKH);
+                session()->put('name', $kh->TENKH);
+                session()->put('email', $kh->EMAIL);
+                session()->put('phone', $kh->SDT);
+                session()->put('addr', $kh->DIACHI);
+                session()->put('id', $kh->MAKH);
+                session()->put('sex', $kh->GIOITINH);
+                return redirect()->route('home.index');
+            } else {
+                return redirect()->route('home.login')->with('errorLogin', 'Mật khẩu không đúng');
             }
-        }else{
-            return redirect()->route('home.login')->with('errorLogin','Email không đúng');
+        } else {
+            return redirect()->route('home.login')->with('errorLogin', 'Email không đúng');
         }
     }
-    public function logout(){
+    public function logout()
+    {
         session()->forget('fname');
-               session()->forget('name');
-               session()->forget('email');
-               session()->forget('phone');
-               session()->forget('addr');
-               session()->forget('id');
-               session()->forget('sex');
+        session()->forget('name');
+        session()->forget('email');
+        session()->forget('phone');
+        session()->forget('addr');
+        session()->forget('id');
+        session()->forget('sex');
         return redirect()->route('home.index');
     }
-    public function register(){
+    public function register()
+    {
         $loai = loaiSanpham::all();
         return view('page.register', compact('loai'));
     }
-   
+
     public function addRegister(Request $request)
     {
         $pass = md5($request->password);
-        DB::table('khachhang')->insert(['MAKH'=>null, 'HOKH'=>$request->HOKH, 'TENKH'=>$request->TENKH, 'GIOITINH'=>$request->GIOITINH, 
-                                        'SDT'=>$request->SDT, 'DIACHI'=>$request->DIACHI, 'EMAIL'=>$request->EMAIL, 'password'=>$pass]);
-        return redirect()->route('home.login')->with('successAdd','Đã thêm thành công, bây giờ bạn có thể đăng nhập');
-        }
+        DB::table('khachhang')->insert([
+            'MAKH' => null, 'HOKH' => $request->HOKH, 'TENKH' => $request->TENKH, 'GIOITINH' => $request->GIOITINH,
+            'SDT' => $request->SDT, 'DIACHI' => $request->DIACHI, 'EMAIL' => $request->EMAIL, 'password' => $pass
+        ]);
+        return redirect()->route('home.login')->with('successAdd', 'Đã thêm thành công, bây giờ bạn có thể đăng nhập');
+    }
     public function profile()
     {
         $kh = KhachHang::find(session()->get('id'));
         $loai = loaiSanpham::all();
-        return view('page.profile', compact('loai','kh'));
+        return view('page.profile', compact('loai', 'kh'));
     }
     public function edit(Request $request)
     {
@@ -84,12 +89,48 @@ class AccountCus extends Controller
             'TENKH' => 'required',
             'SDT' => 'required',
             'DIACHI' => 'required',
+            'GIOITINH'=>'required',
         ]);
         if ($validator->fails()) {
-            return redirect()->route('home.profile')->with('errorLogin','Bạn chưa nhập password hoặc chưa nhập một mục nào đó');
+            return redirect()->route('home.profile')->with('errorLogin', 'Bạn chưa nhập password hoặc chưa nhập một mục nào đó');
         }
-        
+
         $pass = md5($request->password);
-        // if(DB::table('khachhang')->where('MAKH',$request->MAKH)->where('password',$pass)->first() )
-}
+        if (DB::table('khachhang')->where('MAKH', $request->MAKH)->where('password', $pass)->first()) {
+            DB::table('khachhang')->where('MAKH', $request->MAKH)->update([
+                'HOKH' => $request->HOKH,
+                'TENKH' => $request->TENKH,
+                'SDT' => $request->SDT,
+                'DIACHI' => $request->DIACHI,
+
+                'GIOITINH' => $request->GIOITINH,
+            ]);
+            return redirect()->route('home.profile')->with('successAdd', 'Cập nhật thông tin cá nhân thành công');
+        }
+    }
+    public function editPass(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            
+            'passCu' => 'required',
+            'passMoi' => 'required',
+            'passMoi2' => 'required',
+           
+        ]);
+        if ($validator->fails()) {
+            return redirect()->route('home.profile')->with('errorLogin', 'Bạn chưa nhập đầy đủ');
+        }
+        if($request->passMoi != $request->passMoi2){
+            return redirect()->route('home.profile')->with('errorLogin', 'Bạn nhập lại mật khẩu mới chưa đúng');
+        }
+        if(DB::table('khachhang')->where('MAKH', $request->MAKH)->where('password', md5($request->passCu))->first()){
+            $pass = md5($request->passMoi);
+            
+            if(DB::table('khachhang')->where('MAKH', $request->MAKH)->update(['password'=>$pass])){
+            return redirect()->route('home.profile')->with('successAdd', 'Đổi mật khẩu thành công');
+            }
+        }else{
+            return redirect()->route('home.profile')->with('errorLogin', 'Bạn nhập sai mật khẩu cũ');
+        }
+    }
 }

@@ -15,18 +15,15 @@
     <strong id="success">{{Session::get('errors')}}</strong>
 </div>
 @endif
-@include('admin.kho.editKho')
-@include('admin.kho.createKho')
+
 
 </div>
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>Mã sản phẩm</th>
-            <th>Mã nhà cung cấp</th>
-            <th>Hạn sử dụng</th>
-
-            <th>Số lượng còn</th>
+            <th>Mã loại</th>
+            <th>Tên loại</th>
+            <th>Quyền</th>
             <th> </th>
 
         </tr>
@@ -34,16 +31,20 @@
     <tbody>
         @foreach($data as $d)
         <tr>
-            <td style="vertical-align: middle;"">{{$d->MASP}}</td>
-            <td style="vertical-align: middle;">{{$d->MANCC}}</td>
-            <td style="vertical-align: middle;">{{$d->HSD_SP}}</td>
-            <td style="vertical-align: middle;">{{$d->SLCON}}</td>
-            @if(session()->get('quyen')=='admin' || session()->get('quyen')=='ql')
+            <td style="vertical-align: middle;"">{{$d->TENDN}}</td>
+            <td style="vertical-align: middle;">{{$d->password}}</td>
+            <td style="vertical-align: middle;">{{$d->QUYEN}}</td>
+           
+            @if(session()->get('quyen')=='admin')
             <td style="vertical-align: middle;"class="text-right">
-            <button type="button" data-url="{{route('kho.edit', $d->MASP)}}" class="btn btn-sm btn-success btnEdit"  data-toggle="modal" data-target="#MyModal">
+            <button type="button" data-url="{{route('taikhoan.edit', $d->TENDN)}}" class="btn btn-sm btn-success btnEdit"  data-toggle="modal" data-target="#MyModal">
                     <i class="fas fa-edit"></i>
             </button>
-            <a href="{{route('kho.destroy', $d->MASP)}}" class="btn btn-sm btn-danger btnDel" id="">
+               
+            </td>
+            
+            <td class="text-right" style="vertical-align: middle;">
+                <a href="{{route('taikhoan.destroy', $d->TENDN)}}" class="btn btn-sm btn-danger btnDel" id="">
                     <i class="fas fa-trash"></i>
                 </a>
             </td>
@@ -61,7 +62,7 @@
 </form>
 @stop
 @section('name')
-<p>Kho</p>
+<p>Sản phẩm</p>
 @stop
 @section('search')
 <form class="form-inline" action="">
@@ -90,25 +91,23 @@
         ev.preventDefault();
         $.ajax({
             type: 'get',
-            url: 'kho/create',
-            
+            url: 'sanpham/create',
             dataType: "json",
             success: function(response){
-               console.log(response);
+               
                 for(var i=0; i<response.count;i++){
-                     console.log(response.ncc[i].MANCC);
-                    var option = new Option(response.ncc[i].TENNCC, response.ncc[i].MANCC);
-                $('#manccAdd').append($(option));
+                     console.log(response.loai[i].MALOAI);
+                    // $('#maloai').append('<option value="1">One</option>');
+                    var option = new Option(response.loai[i].TENLOAI, response.loai[i].MALOAI);
+                $('#maloaiAdd').append($(option));
                 }
-                for(var i=0; i<response.count2;i++){
-                     console.log(response.sp[i].MASP);
-                    var option = new Option(response.sp[i].MASP, response.sp[i].MSP);
-                $('#maspAdd').append($(option));
-                }
+                // $('#maloaiAdd').append('<option value="1">One</option>');
+                //$('#SOluong').val(response.count);
+                // var option = new Option(response.loai, "value1", true,true);
+                // $('#maloaiAdd').append($(option));
             }
         })
     })
-   
     $('.btnDel').click(function(ev) {
         ev.preventDefault();
         var _href = $(this).attr('href');
@@ -127,20 +126,23 @@
             url: url,
             dataType: "json",
             success: function(response){
-                console.log(response);
+                
                 for(var i=0; i<response.count;i++){
                     
                     // $('#maloai').append('<option value="1">One</option>');
-                    var option = new Option(response.ncc[i].TENNCC, response.ncc[i].MANCC);
-                $('#manccEdit').append($(option));
+                    var option = new Option(response.loai[i].TENLOAI, response.loai[i].MALOAI);
+                $('#maloaiEdit').append($(option));
                 }
                  if(response.status==200){
-                     $('#dongiaEdit').val(response.SP[0].MASP);
-                     $('#hsd').val(response.SP[0].HSD_SP);
-                     $('#manccEdit').val(response.SP[0].MANCC);
-                     $('#dvtinhEdit').val(response.SP[0].SLCON);
-                    
-                     $('#form-edit').attr('data-url','{{ asset("admin/kho/") }}/'+response.SP[0].MASP)
+                     $('#maspEdit').val(response.SP[0].MASP);
+                     
+                     $('#tenspEdit').val(response.SP[0].TENSP);
+                     $('#dvtinhEdit').val(response.SP[0].DVTINH);
+                     $('#dongiaEdit').val(response.SP[0].DONGIA);
+                     $('#maloaiEdit').val(response.SP[0].MALOAI);
+                     $('#motaEdit').val(response.SP[0].MOTA);
+                     $('#anhEdit').val(response.SP[0].ANH);
+                     $('#form-edit').attr('data-url','{{ asset("admin/sanpham/") }}/'+response.SP[0].MASP)
                      
                  }
             }
@@ -156,22 +158,22 @@ $('#form-edit').submit(function(e){
 						url: url,
 						data: {
                             
-							MASP: $('#dongiaEdit').val(),
-                            MANCC: $('#manccEdit').val(),
-                            DVTINH: $('#hsd').val(),
-                            
-                            SLCON: $('#dvtinhEdit').val(),
+							MASP: $('#maspEdit').val(),
+                            TENSP:  $('#tenspEdit').val(),
+                            DVTINH: $('#dvtinhEdit').val(),
+                            DONGIA: $('#dongiaEdit').val(),
+                            MALOAI: $('#maloaiEdit').val(),
+                            MOTA: $('#motaEdit').val(),
                             
 						},
 						success: function(response) {
-							
+							// console.log(response.studentid)
 							 window.location.reload();
                            alert(response.with);
                        
 						},
-						error: function (response) {
-							window.location.reload();
-                           alert(response.with);
+						error: function (jqXHR, textStatus, errorThrown) {
+							//xử lý lỗi tại đây
 						}
 					})
 				})

@@ -22,6 +22,7 @@ Route::get('/sanpham/{id}','HomeControllers@details')->name('home.des');
 
 Route::group(['prefix'=>'admin', 'middleware'=>'checkAdmin'], function(){
     Route::get('/', 'AdminControllers@index')->name('admin.index');
+    Route::get('/thongke', 'AdminControllers@thongke')->name('admin.thongke');
     Route::resources([
         'dasboard'=>'AdminControllers',
         'sanpham'=> 'SanphamController',
@@ -55,3 +56,4 @@ Route::get('/cancleBill/{id}', 'HomeControllers@cancleBill')->name('home.cancleB
 Route::get('/doneBill/{id}', 'HomeControllers@doneBill')->name('home.doneBill');
 Route::get('/myprofile','AccountCus@profile')->name('home.profile');
 Route::post('/myprofile','AccountCus@edit')->name('home.edit');
+Route::post('/myprofile/editPass','AccountCus@editPass')->name('home.editPass');

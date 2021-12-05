@@ -66,6 +66,7 @@ class LoaiSanPhamController extends Controller
      * @param  \App\Models\loaiSanpham  $loaiSanpham
      * @return \Illuminate\Http\Response
      */
+
     public function edit(loaisanpham $loaisanpham)
     {
        
@@ -79,8 +80,8 @@ class LoaiSanPhamController extends Controller
                
            ]);
        }
-    }
 
+    }
     /**
      * Update the specified resource in storage.
      *
