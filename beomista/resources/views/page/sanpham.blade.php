@@ -73,7 +73,7 @@
                                 @csrf
                                 <select name="sortby" id="sortby" class='form-controll'>
                                  
-                                    <option selected value="{{Request::url()}}?sort_by=none">--none--</option>
+                                    <option  value="{{Request::url()}}?sort_by=none">--none--</option>
                                     <option value="{{Request::url()}}?sort_by=tenA">Sắp xếp theo tên: A-Z</option>
                                     <option value="{{Request::url()}}?sort_by=tenZ">Sắp xếp theo tên: Z-A</option>
                                     <option value="{{Request::url()}}?sort_by=giaZ">Sắp xếp theo giá: Thấp đến cao</option>

@@ -4,40 +4,36 @@
 <!--banner top-->
 
 <div class="slider_area slider_style home_three_slider owl-carousel" style="height: 650px;" >
-    <div class="single_slider" data-bgimg="{{url('public/img')}}/slider/slider4.jpg"  style="height: 650px;">
+    <div class="single_slider" data-bgimg="{{url('public/img/logo')}}/banner1.jpg"  style="height: 650px;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12">
                     <div class="slider_content content_one">
-                        <img src="{{url('public/img')}}/slider/content3.png" alt="" >
-                        <p>the wooboom clothing summer collection is back at half price</p>
-                        <a href="">Discover Now</a>
+                       
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="single_slider" data-bgimg="{{url('public/img')}}/slider/slider5.jpg" style="height: 650px;">
+    <div class="single_slider" data-bgimg="{{url('public/img/logo')}}/banner2.jpg" style="height: 650px;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12">
                     <div class="slider_content content_two">
-                        <img src="{{url('public/img')}}/slider/content4.png" alt="">
-                        <p>the wooboom clothing summer collection is back at half price</p>
-                        <a href="">Discover Now</a>
+                       
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="single_slider" data-bgimg="{{url('public/img')}}/slider/slider6.jpg" style="height: 650px;">
+    <div class="single_slider" data-bgimg="{{url('public/img/logo')}}/banner3.jpg" style="height: 650px;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12">
                     <div class="slider_content content_three">
-                        <img src="{{url('public/img')}}/slider/content5.png" alt="">
-                        <p>the wooboom clothing summer collection is back at half price</p>
-                        <a href="">Discover Now</a>
+                       
                     </div>
                 </div>
             </div>
@@ -191,10 +187,9 @@
             <div class="col-lg-6 col-md-6">
                 <div class="banner_area">
                     <div class="banner_thumb">
-                        <a href=""><img src="{{url('public/img')}}/bg/banner11.jpg" alt="#"></a>
+                        <a href=""><img src="{{url('public/img/logo')}}/banner4.jpg" alt="#"></a>
                         <div class="banner_content">
-                            <h1>Handbag <br> Men’s Collection</h1>
-                            <a href="">Discover Now</a>
+                           
                         </div>
                     </div>
                 </div>
@@ -202,10 +197,9 @@
             <div class="col-lg-6 col-md-6">
                 <div class="banner_area">
                     <div class="banner_thumb">
-                        <a href=""><img src="{{url('public/img')}}/bg/banner12.jpg" alt="#"></a>
+                        <a href=""><img src="{{url('public/img/logo')}}/banner5.png" alt="#"></a>
                         <div class="banner_content">
-                            <h1>Sneaker <br> Men’s Collection</h1>
-                            <a href="">Discover Now</a>
+                            
                         </div>
                     </div>
                 </div>

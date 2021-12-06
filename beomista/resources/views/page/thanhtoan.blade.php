@@ -127,7 +127,7 @@
                                 <p class="cart_amount">{{Cart::subtotal()}}</p>
                             </div>
                             <div class="checkout_btn">
-                                <button type="submit" >Proceed to Checkout</button>
+                                <button type="submit" >Đặt hàng</button>
                             </div>
                         </div>
                     </div>
