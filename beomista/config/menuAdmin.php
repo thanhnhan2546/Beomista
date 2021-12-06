@@ -6,14 +6,20 @@
             'icon' => 'fa fa-home'
         ],
         [
+            'label'=> 'Thống kê',
+            'route' => 'admin.thongke',
+            'icon' => 'fa fa-shopping-bag'
+        ],
+
+        [
             'label'=> 'Sản phẩm',
             'route' => 'sanpham.index',
             'icon' => 'fa fa-shopping-bag'
         ],
         [
             'label'=> 'Loại sản phẩm',
-            'route'=> 'loaisanpham.index',
-            'icon'=> 'fa fa-shopping-basket'
+            'route' => 'loaisanpham.index',
+            'icon' => 'fa fa-shopping-bag'
         ],
         [
             'label' => 'Hóa đơn',

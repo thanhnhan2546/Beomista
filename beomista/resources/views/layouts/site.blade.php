@@ -108,24 +108,11 @@
                                                 @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href="about.html">About us</a></li>
-                                        <li><a href="#">pages <i class="fa fa-angle-down"></i></a>
-                                            <ul class="sub_menu pages">
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="services.html">services</a></li>
-                                                <li><a href="faq.html">Frequently Questions</a></li>
-                                                <li><a href="login.html">login</a></li>
-                                                <li><a href="my-account.html">my account</a></li>
-                                                <li><a href="wishlist.html">Wishlist</a></li>
-                                                <li><a href="404.html">Error 404</a></li>
-                                                <li><a href="compare.html">compare</a></li>
-                                                <li><a href="privacy-policy.html">privacy policy</a></li>
-                                                <li><a href="coming-soon.html">coming soon</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="blog.html">blog</a></li>
+                                        <li><a href="">Giới thiệu</a></li>
+                                       
+                                        <li><a href="">Bài viết</a></li>
 
-                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="">Liên hệ</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -155,41 +142,39 @@
                     <div class="row">
                         <div class="col-lg-2 col-md-6 col-sm-6 col-6">
                             <div class="widgets_container">
-                                <h3>Information</h3>
+                                <h3>Thông tin </h3>
                                 <div class="footer_menu">
                                     <ul>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="#">Delivery Information</a></li>
-                                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                        <li><a href="#">Terms & Conditions</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
-                                        <li><a href="#">Returns</a></li>
+                                        <li><a href="">Giới thiệu</a></li>
+                                        <li><a href="#">Thông tin giao hàng</a></li>
+                                        <li><a href="">Chính sách bảo mật</a></li>
+                                        <li><a href="#">Điều khoản</a></li>
+                                        <li><a href="">Liên hệ</a></li>
+                                       
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-6 col-sm-6 col-6">
                             <div class="widgets_container">
-                                <h3>Extras</h3>
+                                <h3> </h3>
                                 <div class="footer_menu">
                                     <ul>
-                                        <li><a href="#">Brands</a></li>
-                                        <li><a href="#">Gift Certificates</a></li>
-                                        <li><a href="#">Affiliate</a></li>
-                                        <li><a href="#">Specials</a></li>
-                                        <li><a href="contact.html">Site Map</a></li>
-                                        <li><a href="my-account.html">My Account</a></li>
+                                       
+                                        <li><a href="#">Phiếu quà tặng</a></li>
+                                        <li><a href="contact.html">Vị trí cửa hàng</a></li>
+                                        <li><a href="my-account.html">Tài khoản</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="widgets_container contact_us">
-                                <h3>Contact Us</h3>
+                                <h3>Liên hệ</h3>
                                 <div class="footer_contact">
-                                    <p>Address: 6688 Princess Road, London, Greater London BAS 23JK, UK</p>
-                                    <p>Phone: <a href="tel:+(+012)800456789-987">(+012) 800 456 789 - 987</a> </p>
-                                    <p>Email: demo@example.com</p>
+                                    <p>Địa chỉ: 105 Thành Thái Phường 14 Quận 10 TP.HCM, Việt Nam</p>
+                                    <p>Hotline: <a href="tel:+(+012)800456789-987">(+012) 800 456 789</a> </p>
+                                    <p>Email: beomista@gmail.com</p>
                                     <ul>
                                         <li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
                                         <li><a href="#" title="google-plus"><i class="fa fa-google-plus"></i></a></li>
@@ -202,13 +187,13 @@
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="widgets_container newsletter">
-                                <h3>Join Our Newsletter Now</h3>
+                                <h3>Đăng ký thành viên của shop</h3>
                                 <div class="newleter-content">
-                                    <p>Exceptional quality. Ethical factories. Sign up to enjoy free U.S. shipping and returns on your first order.</p>
+                                    <p>Để được tận hưởng sự chất lượng, những phần quà hấp dẫn và được chăm sóc vẻ dẹp của mình</p>
                                     <div class="subscribe_form">
                                         <form id="mc-form" class="mc-form footer-newsletter">
                                             <input id="mc-email" type="email" autocomplete="off" placeholder="Enter you email address here..." />
-                                            <button id="mc-submit">Subscribe !</button>
+                                            <button id="mc-submit">Đăng ký</button>
                                         </form>
                                         <!-- mailchimp-alerts Start -->
                                         <div class="mailchimp-alerts text-centre">

@@ -28,9 +28,11 @@
             <th>Đơn giá</th>
             <th>Mã loại</th>
             <th>Mô tả</th>
-            <th>Hình ảnh</th>
+           
             <th>Ngày lập</th>
             <th>SL bán</th>
+            <th>Hình ảnh</th>
+            <th> </th>
 
         </tr>
     </thead>

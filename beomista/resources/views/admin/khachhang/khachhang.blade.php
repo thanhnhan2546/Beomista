@@ -34,12 +34,7 @@
             <td>{{$d->SDT}}</td>
             <td>{{$d->EMAIL}}</td>
             @if(session()->get('quyen')=='admin')
-            <td class="text-right">
-            <button type="button" data-url="{{route('khachhang.edit', $d->MAKH)}}" class="btn btn-sm btn-success btnEdit"  data-toggle="modal" data-target="#MyModal">
-                    <i class="fas fa-edit"></i>
-            </button>
-               
-            </td>
+            
             <td class="text-right">
                 <a href="{{route('khachhang.destroy', $d->MAKH)}}" class="btn btn-sm btn-danger btnDel" id="">
                     <i class="fas fa-trash"></i>

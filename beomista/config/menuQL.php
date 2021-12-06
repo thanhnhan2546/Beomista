@@ -6,8 +6,19 @@
             'icon' => 'fa fa-home'
         ],
         [
+            'label'=> 'Thống kê',
+            'route' => 'admin.index',
+            'icon' => 'fa fa-shopping-bag'
+        ],
+
+        [
             'label'=> 'Sản phẩm',
             'route' => 'sanpham.index',
+            'icon' => 'fa fa-shopping-bag'
+        ],
+        [
+            'label'=> 'Loại sản phẩm',
+            'route' => 'loaisanpham.thongke',
             'icon' => 'fa fa-shopping-bag'
         ],
         [
