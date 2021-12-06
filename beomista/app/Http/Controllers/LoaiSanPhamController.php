@@ -15,7 +15,11 @@ class LoaiSanPhamController extends Controller
     public function index()
     {
         $data = loaiSanpham::Paginate(15);
-        return view('admin.loaisanpham.loaisanpham',compact('data'));
+        if($key =  request()->key){
+            $data = loaiSanpham::search()->Paginate(15);
+        };
+       
+        return view('admin.loaisanpham.loaisanpham', compact('data'));
     }
 
     /**
@@ -25,7 +29,9 @@ class LoaiSanPhamController extends Controller
      */
     public function create()
     {
-        //
+        $loai = loaiSanpham::orderBy('TENLOAI', 'ASC')->get();
+        $count = $loai->count();
+        return response()->json(['loai'=> $loai, 'count'=>$count]);
     }
 
     /**
@@ -36,7 +42,11 @@ class LoaiSanPhamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+       $addd = loaiSanpham::create($request->all());
+       if($addd){
+           return redirect()->route('loaisanpham.index')->with('success','Đã thêm thành công sản phẩm '.$request->MALOAI);
+       }
     }
 
     /**
@@ -56,11 +66,22 @@ class LoaiSanPhamController extends Controller
      * @param  \App\Models\loaiSanpham  $loaiSanpham
      * @return \Illuminate\Http\Response
      */
-    public function edit(loaiSanpham $loaiSanpham)
-    {
-        //
-    }
 
+    public function edit(loaisanpham $loaisanpham)
+    {
+       
+       
+       $sp = loaiSanpham::find($loaisanpham);
+       
+       if($sp){
+           return response()->json([
+               'status'=>200,
+               'SP'=> $sp,
+               
+           ]);
+       }
+
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -68,9 +89,11 @@ class LoaiSanPhamController extends Controller
      * @param  \App\Models\loaiSanpham  $loaiSanpham
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, loaiSanpham $loaiSanpham)
+    public function update(Request $request, loaisanpham $loaisanpham)
     {
-        //
+        $SP = $loaisanpham->update($request->all());
+        return response()->json(['status'=> $request,  'with'=>'Đã chỉnh sửa thành công sản phẩm'.$loaisanpham->MALOAI]);
+        
     }
 
     /**
@@ -79,8 +102,9 @@ class LoaiSanPhamController extends Controller
      * @param  \App\Models\loaiSanpham  $loaiSanpham
      * @return \Illuminate\Http\Response
      */
-    public function destroy(loaiSanpham $loaiSanpham)
+    public function destroy(loaisanpham $loaisanpham)
     {
-        //
+        $loaisanpham->delete();
+     return redirect()->route('loaisanpham.index')->with('success','Đã xóa thành công sản phẩm '.$loaisanpham->MALOAI);
     }
 }
