@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="form-group">
                                 <label>Giới tính</label><br>
-                                <select name="GIOITINH" >
+                                <select name="GIOITINH"  class="form-control">
                                     
                                     <option value="nam">Nam</option>
                                     <option value="nu">Nữ</option>

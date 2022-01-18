@@ -13,6 +13,8 @@ if(session()->get('quyen')=='ql'){
 <html lang="en">
 
 <head>
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admin</title>
@@ -27,6 +29,7 @@ if(session()->get('quyen')=='ql'){
   <link rel="stylesheet" href="{{url('public/css/adddmin')}}/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{url('public/css/adddmin')}}/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
   @yield('css')
 </head>
 
@@ -176,6 +179,9 @@ if(session()->get('quyen')=='ql'){
   <script src="{{url('public/css/adddmin')}}/dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="{{url('public/css/adddmin')}}/dist/js/demo.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+3 <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+4 <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
   @yield('js')
 </body>
 

@@ -17,7 +17,7 @@
                             </p>
                             <p>
                                 <label>Giới tính<span>*</span></label><br>
-                                <select name="GIOITINH" >
+                                <select name="GIOITINH" class = "form-control">
                                     <option value="nam">Nam</option>
                                     <option value="nu">Nữ</option>
                                 </select>

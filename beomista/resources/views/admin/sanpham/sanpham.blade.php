@@ -29,8 +29,8 @@
             <th>Mã loại</th>
             <th>Mô tả</th>
            
-            <th>Ngày lập</th>
-            <th>SL bán</th>
+           
+            
             <th>Hình ảnh</th>
             <th> </th>
 
@@ -42,11 +42,10 @@
             <td style="vertical-align: middle;"">{{$d->MASP}}</td>
             <td style="vertical-align: middle;">{{$d->TENSP}}</td>
             <td style="vertical-align: middle;">{{$d->DVTINH}}</td>
-            <td style="vertical-align: middle;">{{$d->DONGIA}}</td>
+            <td style="vertical-align: middle;">{{number_format($d->DONGIA)}}</td>
             <td style="vertical-align: middle;">{{$d->MALOAI}}</td>
             <td style="vertical-align: middle;">{{$d->MOTA}}</td>
-            <td style="vertical-align: middle;">{{$d->NGAYLAP}}</td>
-            <td style="vertical-align: middle;">{{$d->SLBAN}}</td>
+           
             <td style="vertical-align: middle;"><img src="{{url('public/img/imgSanpham')}}/{{$d->ANH}}" width="110px" ></td>
             @if(session()->get('quyen')=='admin')
             <td style="vertical-align: middle;"class="text-right">

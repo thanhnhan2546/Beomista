@@ -23,6 +23,8 @@ Route::get('/sanpham/{id}','HomeControllers@details')->name('home.des');
 Route::group(['prefix'=>'admin', 'middleware'=>'checkAdmin'], function(){
     Route::get('/', 'AdminControllers@index')->name('admin.index');
     Route::get('/thongke', 'AdminControllers@thongke')->name('admin.thongke');
+    Route::post('/thongke/loc','Admincontrollers@loc')->name('thongke.loc');
+    Route::get('/thongke/dt','Admincontrollers@dt_Tuan')->name('thongke.sort');
     Route::resources([
         'dasboard'=>'AdminControllers',
         'sanpham'=> 'SanphamController',
