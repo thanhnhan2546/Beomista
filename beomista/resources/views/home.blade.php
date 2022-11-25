@@ -4,7 +4,7 @@
 <!--banner top-->
 
 <div class="slider_area slider_style home_three_slider owl-carousel" style="height: 650px;" >
-    <div class="single_slider" data-bgimg="{{url('public/img/logo')}}/banner1.jpg"  style="height: 650px;">
+    <div class="single_slider" data-bgimg="{{url('/img/logo')}}/banner1.jpg"  style="height: 650px;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12">
@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <div class="single_slider" data-bgimg="{{url('public/img/logo')}}/banner2.jpg" style="height: 650px;">
+    <div class="single_slider" data-bgimg="{{url('/img/logo')}}/banner2.jpg" style="height: 650px;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12">
@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div class="single_slider" data-bgimg="{{url('public/img/logo')}}/banner3.jpg" style="height: 650px;">
+    <div class="single_slider" data-bgimg="{{url('/img/logo')}}/banner3.jpg" style="height: 650px;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12">
@@ -60,7 +60,7 @@
                     <div class="col-lg-3">
                         <div class="single_product">
                             <div class="product_thumb">
-                                <a class="primary_img" href="{{route('home.des', $s->MASP)}}"><img src="{{url('public/img/imgSanpham')}}/{{$s->ANH}}" alt=""></a>
+                                <a class="primary_img" href="{{route('home.des', $s->MASP)}}"><img src="{{url('/img/imgSanpham')}}/{{$s->ANH}}" alt=""></a>
                                 
 
                                 <div class="quick_button">
@@ -103,7 +103,7 @@
                     <div class="col-lg-3">
                         <div class="single_product">
                             <div class="product_thumb">
-                                <a class="primary_img" href="{{route('home.des', $s->MASP)}}"><img src="{{url('public/img/imgSanpham')}}/{{$s->ANH}}" alt=""></a>
+                                <a class="primary_img" href="{{route('home.des', $s->MASP)}}"><img src="{{url('/img/imgSanpham')}}/{{$s->ANH}}" alt=""></a>
                                 
 
                                 <div class="quick_button">
@@ -152,7 +152,7 @@
                     <div class="col-lg-3">
                         <div class="single_product">
                             <div class="product_thumb">
-                                <a class="primary_img" href="{{route('home.des', $s->MASP)}}"><img src="{{url('public/img/imgSanpham')}}/{{$s->ANH}}" alt=""></a>
+                                <a class="primary_img" href="{{route('home.des', $s->MASP)}}"><img src="{{url('/img/imgSanpham')}}/{{$s->ANH}}" alt=""></a>
                                 
 
                                 <div class="quick_button">
@@ -187,7 +187,7 @@
             <div class="col-lg-6 col-md-6">
                 <div class="banner_area">
                     <div class="banner_thumb">
-                        <a href=""><img src="{{url('public/img/logo')}}/banner4.jpg" alt="#"></a>
+                        <a href=""><img src="{{url('/img/logo')}}/banner4.jpg" alt="#"></a>
                         <div class="banner_content">
                            
                         </div>
@@ -197,7 +197,7 @@
             <div class="col-lg-6 col-md-6">
                 <div class="banner_area">
                     <div class="banner_thumb">
-                        <a href=""><img src="{{url('public/img/logo')}}/banner5.png" alt="#"></a>
+                        <a href=""><img src="{{url('/img/logo')}}/banner5.png" alt="#"></a>
                         <div class="banner_content">
                             
                         </div>

@@ -78,6 +78,23 @@ class HoadonController extends Controller
     public function edit(hoadon $hoadon)
     { 
         DB::table('hoadon')->where('MAHD',$hoadon->MAHD)->update(['TINHTRANG'=>1]);
+        switch($hoadon->TINHTRANG){
+            case 0 :{
+                DB::table('hoadon')->where('MAHD',$hoadon->MAHD)->update(['TINHTRANG'=>1]);
+                break;
+            }case 1:{
+                DB::table('hoadon')->where('MAHD',$hoadon->MAHD)->update(['TINHTRANG'=>2]);
+                break;
+            }
+            case 2:{
+                DB::table('hoadon')->where('MAHD',$hoadon->MAHD)->update(['TINHTRANG'=>3]);
+                break;
+            }
+            case 3:{
+                DB::table('hoadon')->where('MAHD',$hoadon->MAHD)->update(['TINHTRANG'=>4]);
+                break;
+            }
+        }
         $cthd = DB::table('chitiethoadon')->where('MAHD',$hoadon->MAHD)->get();
         foreach($cthd as $c){
             $kho = DB::table('kho')->where('MASP',$c->MASP)->get();
@@ -90,7 +107,27 @@ class HoadonController extends Controller
             echo($sau);
             DB::table('kho')->where('MASP',$c->MASP)->update(['SLCON'=>$sau]);
         }
-        return redirect()->route('hoadon.index')->with('success', 'Đã xác nhận đơn hàng '.$hoadon->MAHD);
+        switch($hoadon->TINHTRANG){
+            case 0 :{
+                DB::table('hoadon')->where('MAHD',$hoadon->MAHD)->update(['TINHTRANG'=>1]);
+                return redirect()->route('hoadon.index')->with('success', 'Đã xác nhận đơn hàng '.$hoadon->MAHD);
+                break;
+            }case 1:{
+                DB::table('hoadon')->where('MAHD',$hoadon->MAHD)->update(['TINHTRANG'=>2]);
+                return redirect()->route('hoadon.index')->with('success', 'Đang chuẩn bị hàng '.$hoadon->MAHD);
+                break;
+            }
+            case 2:{
+                DB::table('hoadon')->where('MAHD',$hoadon->MAHD)->update(['TINHTRANG'=>3]);
+                return redirect()->route('hoadon.index')->with('success', 'Đang giao hàng '.$hoadon->MAHD);
+                break;
+            }
+            case 3:{
+                DB::table('hoadon')->where('MAHD',$hoadon->MAHD)->update(['TINHTRANG'=>4]);
+                break;
+            }
+        }
+        
     }
 
     /**

@@ -2,7 +2,7 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<<link rel="stylesheet" href="{{url('public/css/adddmin')}}/login.css">
+<<link rel="stylesheet" href="{{url('/css/adddmin')}}/login.css">
 <!DOCTYPE html>
 <html>
 <head>

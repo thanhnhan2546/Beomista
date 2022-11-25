@@ -18,7 +18,7 @@
         ],
         [
             'label'=> 'Loại sản phẩm',
-            'route' => 'loaisanpham.thongke',
+            'route' => 'loaisanpham.index',
             'icon' => 'fa fa-shopping-bag'
         ],
         [

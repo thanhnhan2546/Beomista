@@ -49,7 +49,7 @@
                                     <tr>
 
                                        
-                                        <td class="product_thumb" style="width: 40px;"><a href="#"><img src="{{url('public/img/imgSanpham')}}/{{$c['ANHSP']}}" alt=""></a></td>
+                                        <td class="product_thumb" style="width: 40px;"><a href="#"><img src="{{url('/img/imgSanpham')}}/{{$c['ANHSP']}}" alt=""></a></td>
                                         <td class="product_name"><a href="#">{{$c['TENSP']}}</a></td>
                                         <td class="product-price">{{number_format($c['DONGIA'])}} VNĐ</td>
                                         <td class="product_quantity">{{$c['SOLUONG']}}</td>

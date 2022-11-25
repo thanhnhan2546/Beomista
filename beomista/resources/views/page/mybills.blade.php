@@ -50,7 +50,7 @@
                                     @foreach($hd as $c)
                                     <tr>
                                     
-                                    <td class="product_remove"><a href="{{route('home.myDetails',$c->MAHD)}}"><img src="{{url('public/img/icon')}}/details.jpg" width="50px"></a></td>
+                                    <td class="product_remove"><a href="{{route('home.myDetails',$c->MAHD)}}"><img src="{{url('/img/icon')}}/details.jpg" width="50px"></a></td>
                                         <td class="product_remove" ><a href="#">{{$c->MAHD}}</a></td>
                                         <td class="product-price">{{$c->NGAYLAP}}</td>
                                         <td class="product_quantity">{{number_format($c->TONGTIEN)}} VNĐ</td>
@@ -62,18 +62,20 @@
                                             $status = 'Đã xác nhận';   
                                         }
                                         if($c->TINHTRANG == 2){
-                                            $status = 'Chờ xác nhận hủy';   
+                                            $status = 'Đang chuẩn bị hàng';   
                                         }
                                         if($c->TINHTRANG == 3){
+                                            $status = 'Đang giao hàng';   
+                                        }
+                                        if($c->TINHTRANG == 4){
                                             $status = 'Đã nhận hàng';   
                                         }
                                     ?>
-                                       <td class="product_total"><i class="btn btn-sm btn-outline-info" >{{$status}}</i></td>  
-                                       @if($c->TINHTRANG== 0 )
-                                       <td class=""><a href="{{route('home.cancleBill',$c->MAHD)}}"><i class="btn btn-sm btn-danger"> Hủy đơn</i></a></td>
-                                       @endif
-                                       @if($c->TINHTRANG== 1 )
-                                       <td class=""><a href="" data-toggle="modal" data-target="#myModal"><i class="btn btn-sm btn-danger" > Hủy đơn</i></a></td>
+                                       <td class="product_total"><i class="btn btn-sm btn-outline-info" >{{$status}}</i>
+                            
+                                    </td>  
+                                      
+                                       @if($c->TINHTRANG== 3)
                                        <td class=""><a href="{{route('home.doneBill',$c->MAHD)}}"><i class="btn btn-sm btn-success"> Đã nhận hàng</i></a></td>
                                        <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">

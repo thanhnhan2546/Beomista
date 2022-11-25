@@ -26,7 +26,7 @@
 
                         <div id="img-1" class="zoomWrapper single-zoom">
                             <a href="#">
-                                <img id="zoom1" src="{{url('public/img/imgSanpham')}}/{{$sp->ANH}}"  data-zoom-image="{{url('public/img/imgSanpham')}}/{{$sp->ANH}}" alt="big-1">
+                                <img id="zoom1" src="{{url('/img/imgSanpham')}}/{{$sp->ANH}}"  data-zoom-image="{{url('/img/imgSanpham')}}/{{$sp->ANH}}" alt="big-1">
                             </a>
                         </div>
 

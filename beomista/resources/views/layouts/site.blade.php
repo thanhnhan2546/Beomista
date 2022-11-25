@@ -8,17 +8,17 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{url('public/img')}}/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{url('/img')}}/favicon.ico">
 
     <!-- CSS 
     ========================= -->
 
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="{{url('public/css/home')}}/plugins.css">
+    <link rel="stylesheet" href="{{url('/css/home')}}/plugins.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="{{url('public/css/home')}}/style.css">
+    <link rel="stylesheet" href="{{url('/css/home')}}/style.css">
     
 
 </head>
@@ -76,7 +76,7 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="logo">
-                                <a href="{{route('home.index')}}"><img src="{{url('public/img')}}/logo/Logo.png" alt=""></a>
+                                <a href="{{route('home.index')}}"><img src="{{url('/img')}}/logo/Logo.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -221,10 +221,10 @@
 ============================================ -->
 
         <!-- Plugins JS -->
-        <script src="{{url('public/css/home')}}/plugins.js"></script>
+        <script src="{{url('/css/home')}}/plugins.js"></script>
         <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
         <!-- Main JS -->
-        <script src="{{url('public/css/home')}}/main.js"></script>
+        <script src="{{url('/css/home')}}/main.js"></script>
         <script>
             $('.update-all').click(function() {
                 var list = [];

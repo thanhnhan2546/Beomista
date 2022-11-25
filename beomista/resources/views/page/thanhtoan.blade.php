@@ -83,7 +83,7 @@
                                             <tr>
 
 
-                                                <td class="" style="width: 30%;"><a href="#"><img src="{{url('public/img/imgSanpham')}}/{{$c->options->image}}" width="90%" alt=""></a></td>
+                                                <td class="" style="width: 30%;"><a href="#"><img src="{{url('/img/imgSanpham')}}/{{$c->options->image}}" width="90%" alt=""></a></td>
                                                 <td class="" style="width: 40%;"><a href="#">{{$c->name}}</a></td>
                                                 <td class="product-price" style="width: 30%;text-align: center;">{{number_format($c->price)}} VNĐ</td>
                                                 <td style="width: 40px; text-align: center;">{{$c->qty}}</td>

@@ -24,11 +24,11 @@ if(session()->get('quyen')=='ql'){
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{url('public/css/adddmin')}}/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{url('/css/adddmin')}}/plugins/fontawesome-free/css/all.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="{{url('public/css/adddmin')}}/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="{{url('/css/adddmin')}}/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{url('public/css/adddmin')}}/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="{{url('/css/adddmin')}}/dist/css/adminlte.min.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
   @yield('css')
 </head>
@@ -86,7 +86,7 @@ if(session()->get('quyen')=='ql'){
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="" class="brand-link">
-        <img src="{{url('public/img/icon')}}/admin.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="{{url('/img/icon')}}/admin.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">{{session()->get('tendn')}}</span>
       </a>
 
@@ -170,15 +170,15 @@ if(session()->get('quyen')=='ql'){
   <!-- ./wrapper -->
 
   <!-- jQuery -->
-  <script src="{{url('public/css/adddmin')}}/plugins/jquery/jquery.min.js"></script>
+  <script src="{{url('/css/adddmin')}}/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
-  <script src="{{url('public/css/adddmin')}}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{url('/css/adddmin')}}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- overlayScrollbars -->
-  <script src="{{url('public/css/adddmin')}}/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <script src="{{url('/css/adddmin')}}/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
   <!-- AdminLTE App -->
-  <script src="{{url('public/css/adddmin')}}/dist/js/adminlte.min.js"></script>
+  <script src="{{url('/css/adddmin')}}/dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
-  <script src="{{url('public/css/adddmin')}}/dist/js/demo.js"></script>
+  <script src="{{url('/css/adddmin')}}/dist/js/demo.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 3 <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 4 <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>

@@ -58,7 +58,7 @@
                                     <tr>
 
                                         <td class="product_remove btnDel"><a href="{{route('home.delCart',$c->rowId)}}"><i class="fa fa-trash-o"></i></a></td>
-                                        <td class="product_thumb"><a href="#"><img src="{{url('public/img/imgSanpham')}}/{{$c->options->image}}" alt=""></a></td>
+                                        <td class="product_thumb"><a href="#"><img src="{{url('/img/imgSanpham')}}/{{$c->options->image}}" alt=""></a></td>
                                         <td class="product_name"><a href="#">{{$c->name}}</a></td>
                                         <td class="product-price">{{number_format($c->price)}} VNĐ</td>
                                         <td class="product_quantity"><input min="1" max="100" value="{{$c->qty}}" type="number" data-id="{{$c->rowId}}"></td>

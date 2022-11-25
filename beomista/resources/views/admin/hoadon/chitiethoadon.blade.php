@@ -8,7 +8,7 @@
     <thead>
         <tr>
             <th style="text-align:center;">Mã khách hàng</th>
-            <th style="text-align:center;">Họ khách hàng</th>
+            <th style="text-align:center;">Ngày lập</th>
             <th style="text-align:center;">Tên khách hàng</th>
             <th style="text-align:center;">Giới tính</th>
             <th style="text-align:center;">Số điện thoại</th>
@@ -21,7 +21,7 @@
         
         <tr>
             <td style="vertical-align: middle;text-align:center;">{{$kh->MAKH}}</td>
-            <td style="vertical-align: middle;text-align:center;">{{$kh->HOKH}}</td>
+            <td style="vertical-align: middle;text-align:center;">{{ \Carbon\Carbon::parse($hoadon->NGAYLAP)->format('d-m-Y')}}</td>
             <td style="vertical-align: middle;text-align:center;">{{$kh->TENKH}}</td>
             <td style="vertical-align: middle;text-align:center;">{{$kh->GIOITINH}}</td>
             <td style="vertical-align: middle;text-align:center;">{{$kh->SDT}}</td>
@@ -53,7 +53,7 @@
         <tr>
             <td style="vertical-align: middle;text-align:center;">{{$c['MASP']}}</td>
             <td >{{$c['TENSP']}}</td>
-            <td style="vertical-align: middle;"><img src="{{url('public/img/imgSanpham')}}/{{$c['ANHSP']}}" width="110px" ></td>
+            <td style="vertical-align: middle;"><img src="{{url('/img/imgSanpham')}}/{{$c['ANHSP']}}" width="110px" ></td>
             <td style="vertical-align: middle;text-align:center;">{{$c['SOLUONG']}}</td>
             <td style="vertical-align: middle;text-align:center;">{{$c['DONGIA']}}</td>
             <td style="vertical-align: middle;text-align:center;">{{$c['THANHTIEN']}}</td>
@@ -95,7 +95,7 @@
 
 <!-- @stop -->
 @section('css')
-<link rel="stylesheet" href="{{url('public/css/addform')}}/addForm.css">
+<link rel="stylesheet" href="{{url('/css/addform')}}/addForm.css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

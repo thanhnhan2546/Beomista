@@ -46,7 +46,7 @@
             <td style="vertical-align: middle;">{{$d->MALOAI}}</td>
             <td style="vertical-align: middle;">{{$d->MOTA}}</td>
            
-            <td style="vertical-align: middle;"><img src="{{url('public/img/imgSanpham')}}/{{$d->ANH}}" width="110px" ></td>
+            <td style="vertical-align: middle;"><img src="{{url('/img/imgSanpham')}}/{{$d->ANH}}" width="110px" ></td>
             @if(session()->get('quyen')=='admin')
             <td style="vertical-align: middle;"class="text-right">
             <button type="button" data-url="{{route('sanpham.edit', $d->MASP)}}" class="btn btn-sm btn-success btnEdit"  data-toggle="modal" data-target="#MyModal">
@@ -192,7 +192,7 @@ $('#form-edit').submit(function(e){
 </script>
 <!-- @stop -->
 @section('css')
-<link rel="stylesheet" href="{{url('public/css/addform')}}/addForm.css">
+<link rel="stylesheet" href="{{url('/css/addform')}}/addForm.css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

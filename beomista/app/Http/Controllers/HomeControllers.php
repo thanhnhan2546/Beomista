@@ -169,7 +169,7 @@ class HomeControllers extends Controller
    public function doneBill($id)
    {
     $hd = hoadon::find($id);
-    DB::table('hoadon')->where('MAHD',$hd->MAHD)->update(['TINHTRANG'=>3]);
+    DB::table('hoadon')->where('MAHD',$hd->MAHD)->update(['TINHTRANG'=>4]);
     $ct = DB::table('chitiethoadon')->where('MAHD',$id)->get();
     foreach($ct as $c){
         $s = DB::table('sanpham')->where('MASP',$c->MASP)->get();

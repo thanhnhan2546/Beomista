@@ -39,10 +39,10 @@
         <div class="about-row row" style="margin-top: 30px;">
             <div class="image-col col-md-4">
                 @if($kh->GIOITINH=='nam')
-                <img src="{{url('public/img/icon')}}/male.png" alt="">
+                <img src="{{url('/img/icon')}}/male.png" alt="">
                 @endif
                 @if($kh->GIOITINH =='nu')
-                <img src="{{url('public/img/icon')}}/female.png" alt="">
+                <img src="{{url('/img/icon')}}/female.png" alt="">
                 @endif
             </div>
             <div class="detail-col col-md-8">

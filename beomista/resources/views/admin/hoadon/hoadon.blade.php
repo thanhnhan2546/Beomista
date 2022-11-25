@@ -45,10 +45,13 @@
             @endif
             
             @if($d->TINHTRANG==2)
-            <td style="vertical-align: middle;text-align:center;"><i class="alert alert-danger">Muốn hủy đơn</i></td>
+            <td style="vertical-align: middle;text-align:center;"><i class="alert alert-info">Đang chuẩn bị hàng</i></td>
             
             @endif
             @if($d->TINHTRANG==3)
+            <td style="vertical-align: middle;text-align:center;"><i class="alert alert-secondary">Đang giao hàng</i></td>
+            @endif
+            @if($d->TINHTRANG==4)
             <td style="vertical-align: middle;text-align:center;"><i class="alert alert-success">Đã giao hàng</i></td>
             @endif
             @if(session()->get('quyen')=='admin'|| session()->get('quyen')=='ql')
@@ -62,11 +65,17 @@
                     <i class="">Xác nhận đơn hàng</i>
                 </a>
                 @endif
-            @if($d->TINHTRANG==2)
-            <a href="{{route('hoadon.destroy',$d->MAHD)}}" class="btn btn-sm btn-danger btnDel" id="">
-                    <i class="">Xác nhận hủy đơn</i>
+            @if($d->TINHTRANG==1)
+            <a href="{{route('hoadon.edit',$d->MAHD)}}" class="btn btn-sm btn-info  " id="">
+                    <i class="">Đang chuẩn bị hàng</i>
                 </a>
                 @endif
+            @if($d->TINHTRANG==2)
+            <a href="{{route('hoadon.edit',$d->MAHD)}}" class="btn btn-sm btn-warning" id="">
+                    <i class="">Đang giao hàng</i>
+                </a>
+                @endif
+          
 
             </td>
            @endif
@@ -201,7 +210,7 @@ $('#form-edit').submit(function(e){
 </script>
 <!-- @stop -->
 @section('css')
-<link rel="stylesheet" href="{{url('public/css/addform')}}/addForm.css">
+<link rel="stylesheet" href="{{url('/css/addform')}}/addForm.css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

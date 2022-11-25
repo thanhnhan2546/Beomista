@@ -96,7 +96,7 @@
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="single_product">
                                 <div class="product_thumb">
-                                    <a class="primary_img" href="{{route('home.des', $s->MASP)}}"><img src="{{url('public/img/imgSanpham')}}/{{$s->ANH}}" width="200px" alt=""></a>
+                                    <a class="primary_img" href="{{route('home.des', $s->MASP)}}"><img src="{{url('/img/imgSanpham')}}/{{$s->ANH}}" width="200px" alt=""></a>
                                   
                                     <div class="quick_button">
                                         
